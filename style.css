@@ -1,0 +1,166 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* Using a gradient as a fallback for the local background image */
+    background: linear-gradient(90deg, #2c3e50, #4ca1af);
+    color: #fff;
+    /* Updated font */
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Search Form Styling */
+.user-form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.user-form input {
+    width: 100%;
+    display: block;
+    background-color: rgba(245, 245, 245, 0.62);
+    border: none;
+    border-radius: 10px;
+    color: #2c3e50;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.user-form input::placeholder {
+    color: #555;
+}
+
+.user-form input:focus {
+    outline: 2px solid #4078c0;
+}
+
+/* Profile Card Styling */
+.card {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(245, 245, 245, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 2rem;
+    margin: 0 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 8px solid #4078c0;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.user-info {
+    color: #333;
+    margin-left: 2rem;
+    width: 100%;
+}
+
+.user-info h2 {
+    margin-top: 0;
+    /* Updated font weight for new font */
+    font-weight: 700;
+}
+
+.user-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.user-info ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 400px;
+}
+
+.user-info ul li {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.user-info ul li strong {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Repositories Styling */
+#repos {
+    margin-top: 1.5rem;
+}
+
+.repo {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4078c0;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.repo:hover {
+    background-color: #2c5a99;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .user-info {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    .user-info ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .user-form {
+        max-width: 400px;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .user-info ul li {
+        margin-right: 0.5rem;
+    }
+}
